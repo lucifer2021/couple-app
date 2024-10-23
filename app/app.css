@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.message {
+  border-radius: 15;
+  padding: 10;
+  margin: 5;
+  max-width: 80%;
+}
+
+.message-sent {
+  background-color: #DCF8C6;
+  align-self: flex-end;
+}
+
+.message-received {
+  background-color: #E8E8E8;
+  align-self: flex-start;
+}
+
+.vibrate-btn {
+  background-color: #FF69B4;
+  color: white;
+  font-size: 18;
+  font-weight: bold;
+  border-radius: 25;
+  height: 50;
+}

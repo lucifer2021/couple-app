@@ -1,0 +1,21 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="Couple Chat" class="bg-pink-500 text-white" />
+    
+    <GridLayout rows="*, auto, auto">
+        <ListView row="0" items="{{ messages }}" class="p-2">
+            <ListView.itemTemplate>
+                <StackLayout class="{{ isReceived ? 'message message-received' : 'message message-sent' }}">
+                    <Label text="{{ text }}" textWrap="true" class="text-base" />
+                    <Label text="{{ timestamp, timestamp | formatTime }}" class="text-xs text-gray-500" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <Button row="1" text="💗 Send Vibration 💗" tap="{{ onVibratePress }}" class="vibrate-btn m-2" />
+        
+        <GridLayout row="2" columns="*, auto" class="p-2">
+            <TextField col="0" text="{{ messageText }}" hint="Type a message..." class="bg-white rounded-full px-4 py-2" />
+            <Button col="1" text="Send" tap="{{ onSendMessage }}" class="bg-pink-500 text-white rounded-full ml-2 px-6" />
+        </GridLayout>
+    </GridLayout>
+</Page>

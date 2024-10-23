@@ -1,0 +1,23 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="Couple Chat Login" class="bg-pink-500 text-white" />
+    
+    <StackLayout class="p-4">
+        <TextField text="{{ email }}" hint="Email" keyboardType="email" class="bg-white rounded-lg p-4 mb-2" />
+        <TextField text="{{ password }}" hint="Password" secure="true" class="bg-white rounded-lg p-4 mb-4" />
+        
+        <Button text="Login" tap="{{ onLogin }}" class="bg-pink-500 text-white rounded-lg p-4 mb-2" />
+        <Button text="Register" tap="{{ onRegister }}" class="bg-purple-500 text-white rounded-lg p-4 mb-4" />
+        
+        <StackLayout visibility="{{ hasReferralCode ? 'visible' : 'collapsed' }}" class="mb-4">
+            <Label text="Your Referral Code:" class="text-center text-gray-600" />
+            <Label text="{{ referralCode }}" class="text-center font-bold text-lg" />
+            <Button text="Share Code" tap="{{ onShareCode }}" class="bg-blue-500 text-white rounded-lg p-4 mt-2" />
+        </StackLayout>
+        
+        <StackLayout visibility="{{ !hasReferralCode ? 'visible' : 'collapsed' }}">
+            <Label text="Have a referral code?" class="text-center text-gray-600 mb-2" />
+            <TextField text="{{ referralCodeInput }}" hint="Enter referral code" class="bg-white rounded-lg p-4 mb-2" />
+            <Button text="Join Partner" tap="{{ onJoinPartner }}" class="bg-green-500 text-white rounded-lg p-4" />
+        </StackLayout>
+    </StackLayout>
+</Page>

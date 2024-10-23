@@ -1,0 +1,20 @@
+android {
+    defaultConfig {
+        applicationId "org.nativescript.couplesapp"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("couples-app.keystore")
+            storePassword "your-store-password"
+            keyAlias "couples-app"
+            keyPassword "your-key-password"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+}
